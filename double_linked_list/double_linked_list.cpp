@@ -186,3 +186,6 @@ int main() {
 			case '3':
 				obj.traverse();
 				break;
+			case '4':
+				obj.revtraverse();
+				break;
