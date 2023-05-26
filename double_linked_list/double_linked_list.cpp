@@ -19,7 +19,7 @@ public:
 	bool deleteNode(int rollNo);
 	bool listEmpty();
 	void traverse();
-	void retraverse();
+	void revtraverse();
 	void hapus();
 	void searchData();
 };
@@ -112,7 +112,7 @@ void doubleLinkedlist::traverse() {
 		}
 	}
 }
-void DoubleLinkedlist::revtraverse() {
+void doubleLinkedlist::revtraverse() {
 	if (listEmpty()) {
 		cout << "\nList is empty" << endl;
 	}
@@ -129,4 +129,19 @@ void DoubleLinkedlist::revtraverse() {
 		}
 	}
 }
+void doubleLinkedlist::hapus() {
+	if (listEmpty()) {
+		cout << "\nList is empty" << endl;
+
+	}
+	cout << "\nEnter the roll number of the student whose record is to be deleted: ";
+	int rollNo;
+	cin >> rollNo;
+	cout << endl;
+	if (doubleLinkedlist::deleteNode(rollNo) == false)
+		cout << "Record not found" << endl;
+	else
+		cout << "Record with roll number: " << rollNo << "deleted" << endl;
+}
+
 
