@@ -189,3 +189,6 @@ int main() {
 			case '4':
 				obj.revtraverse();
 				break;
+			case '5':
+				obj.searchData();
+				break;
