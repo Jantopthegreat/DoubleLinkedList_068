@@ -183,3 +183,6 @@ int main() {
 			case '2':
 				obj.hapus();
 				break;
+			case '3':
+				obj.traverse();
+				break;
