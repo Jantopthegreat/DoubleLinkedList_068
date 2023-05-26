@@ -49,7 +49,7 @@ void doubleLinkedlist::addNode() {
 		START = newNode; //step5
 		return;
 	}
-/*Inserting a Node Between two Nodes in the List*/
+	/*Inserting a Node Between two Nodes in the List*/
 	Node* current = START; //1.d
 	Node* previous = NULL;
 	while (current->next != NULL && current->next->noMhs < nim) //step 1.c
@@ -63,4 +63,21 @@ void doubleLinkedlist::addNode() {
 		return;
 	}
 
+	newNode->next = current->next; //step 4
+	newNode->prev = current; //step5
+	if (current->next != NULL)
+		current->next->prev = newNode; //step6
+	current->next = newNode; //step 7
+} 
+
+bool doubleLinkedlist::search(int rollNo, Node** previous, Node** current) {
+	*previous = NULL; //step 1.a
+	*current = START; //step 1.b
+	while (*current != NULL && (*current)->noMhs != rollNo) { //step 1.c
+		*previous = *current; //step 1.d
+		*current = (*current)->next; //step 1.e
+	}
+	return (*current != NULL);
+	}
+}
 
